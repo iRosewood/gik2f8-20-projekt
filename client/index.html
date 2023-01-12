@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="shortcut icon"
+        href="data:image/x-icon;"
+        type="image/x-icon" />
+  <title>Anställda-applikation</title>
+</head>
+
+<body>
+  <main id="root"
+        class="pt-24 bg-gradient-to-tr from-sky-700 to-slate-300 min-h-screen">
+    <h1 class="text-center mb-10 text-7xl text-white">Anställda</h1>
+    <section class="flex gap-10 xl:w-4/5 h-1/5  xl:mx-auto bg-white/50 p-5 rounded-lg">
+      <section class="w-1/3">
+        <h2 class="mb-6 text-3xl text-slate-900">Lägg till ny anställd:</h2>
+        <form id="listForm"
+              name="listForm">
+          <section class="mb-2">
+            <label class="block pr-5 mb-2 text-xl"
+                   for="title">Namn</label>
+            <p class="message text-sm text-red-700 mb-2 hidden">
+              Error message
+            </p>
+            <input type="text"
+                   id="employee"
+                   name="employee"
+                   class="w-full bg-white/90 rounded-md border-slate-900 border-2 focus-within:outline-none focus:border-yellow-500 px-4 py-2" />
+          </section>
+          <section class="mb-2">
+            <label class="block pr-5 mb-2 text-xl"
+                   for="description">Anställningsnummer</label>
+            <p class="tracking-wide message text-sm text-red-700 mb-2 hidden">
+              Error message
+            </p>
+            <input type="text"
+            id="number"
+            name="number"
+            class="w-full bg-white/90 rounded-md border-slate-900 border-2 focus-within:outline-none focus:border-yellow-500 px-4 py-2" />
+          </section>
+
+          <section class="mb-2">
+            <label class="block pr-5 mb-2 text-xl"
+                   for="description">Telefonnummer</label>
+            <p class="tracking-wide message text-sm text-red-700 mb-2 hidden">
+              Error message
+            </p>
+            <input type="text"
+            id="phone"
+            name="phone"
+            class="w-full bg-white/90 rounded-md border-slate-900 border-2 focus-within:outline-none focus:border-yellow-500 px-4 py-2" />
+          </section>
+          <button name="submitlistForm"
+                  class="tracking-widerounded-md bg-yellow-500 hover:bg-yellow-400 px-4 mt-2 py-1"
+                  type="submit">
+            Lägg till
+          </button>
+        </form>
+      </section>
+
+      <section class="flex-1 px-5"> 
+        <div class="flex justify-between w-5/6">
+          <h2 class="text-center mb-6 text-xl text-slate-900 ml-8 mr-30">Namn</h2>
+          <h2 class="text-center mb-6 text-xl text-slate-900 ml-20">Anställningsnummer</h2>
+          <h2 class="text-center mb-6 text-xl text-slate-900 mr-40">Telefonnummer</h2>
+        </div>
+       
+        <ul id="packingList">
+         
+        </ul>
+      </section>
+    </section>
+  </main>
+  <script src="Api.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
