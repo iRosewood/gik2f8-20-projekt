@@ -27,24 +27,6 @@ app.get('/tasks', async (req, res) => {
 
 
 
-/* Uppgift 2 C, hela app.post*/
-
-/* MALIN
-Lyssnar och tar emot data till backend. Svaret från backend är res. Svaret kommer från tasks.json
-När ett request är gjort, kommer servern utföra funktionen.
-Funktionen läser först request-bodyn och sparar den i variablen 'task'.
-Sedan läser den innehållen av filen 'tasks.json' och sparar den i variabeln listBuffer.
-För att kunna behandla listan av tasks i filen som JavaScript-objekt, behövs JSON.parse. 
-
-EMMA
-Vi parsar(formaterar) alltså innehållet av listBuffer och sparar objektet i variabeln 'currentTasks'.
-Sedan tilldelas objektet ett id.
-Sedan lägger den till det nya objektet till arrayen och skriver den resulterande arrayen till tasks.json.
-Till sist skickar den det nya objektet tillbaka i responsen.
-Om ett error förekommer någon gång under processsen, kommer servern skicka ett respons med statuskoden 500 (Internal Server Error) och errormeddelandet.
-*/
-
-
 app.post('/tasks', async (req, res) => {
   try {
     const task = req.body;

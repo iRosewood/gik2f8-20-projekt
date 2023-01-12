@@ -67,11 +67,6 @@ function validateField(field) {
 }
 
 
-/*
-// 1.2 EMMA
-Denna funktion (onSubmit) kontrollerar om fälten är korrekt ifyllda. 
-Om variablerna är True så skickas det vidare till nästa funktion (saveEmployee)
-*/
 
 function onSubmit(e) {
   e.preventDefault();
@@ -82,16 +77,6 @@ function onSubmit(e) {
   }
 }
 
- /*
- 1.3 MALIN
- Saveemployee funktionen sparar en ny "employee" till servern. 
- Den gör det genom att skapa ett objekt med tre egenskaper: employee, number, and phone.
- Dessa egenskaper tilldelas de värden som fyllts i formuläret.
-
- EMMA
- Objektet skickas sen vidare till en api.create function, som sänder en HTTP POST förfrågan/request (C i CURD) för att skapa ett nytt objekt i servern.
- Om förfrågan går igenom, så kallas funktionen renderList för att uppdatera listan med det nya objektet.
- */
 
 function saveEmployee() {
   const employee = {
@@ -112,16 +97,6 @@ api.create(employee).then((employee) => {
   listForm.phone.value="";
 }
 
-/*  Uppgift 2A
-
- 1.1.0 EMMA
- I denna funktion så skrivs listan ut i frontend genom att anropa metoden getAll som är vår HTTP-get-metod (se filen Api.js.) (Gå till filen Api.js)
-
- 1.1.2 EMMA
- If satsen sker när parametern employees och längden på employees är större än 0, Då har vi en for each loop som ittererar genom listan
- och då anropar vi på renderemployees och skapar dessa div-ar när man klickar på Lägg till knappen och på så sätt sker detta dynamiskt.
- Och bara för att visa att spara-knappen är länkad med renderList-funktionen så kan vi visa det här ovan. (1.2) */
-
 function renderList() {
   console.log('rendering');
   api.getAll().then((employees) => {
@@ -135,14 +110,6 @@ function renderList() {
   });
 }
 
-
-/* Uppgift 2A
-
-1.0 MALIN
-Här skapas HTML kod baserat på egenskaper hos objektet.
-Det som sker här är att vi skapar flera olika element som stylas med hjälp av tailwind-klasser som
-anropas i funktionen ovan ( renderList() ).
-*/
 
 function renderEmployee({ id, employee, number, phone}) {
 let html = `
